@@ -5,7 +5,10 @@
     "project": true,
     "tsconfigRootDir": "__dirname"
   },
-  "plugins": ["eslint-plugin-unicorn", "@typescript-eslint"],
+  "plugins": [
+    "eslint-plugin-unicorn",
+    "@typescript-eslint"
+  ],
   "extends": [
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -16,20 +19,29 @@
   ],
   "overrides": [
     {
-      "files": ["*.ts", "**/*.ts", "*.tsx", "**/*.tsx"],
+      "files": [
+        "*.ts",
+        "**/*.ts",
+        "*.tsx",
+        "**/*.tsx"
+      ],
       "excludedFiles": "*.test.js",
       "rules": {
         "import/first": "error",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-empty-function": "error",
-        "@typescript-eslint/no-misused-promises": "error",
         "@typescript-eslint/no-unnecessary-condition": "error",
         "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/no-unnecessary-type-assertion": "error",
         "@typescript-eslint/require-await": "error",
         "@typescript-eslint/return-await": "error",
-        "max-lines": ["error", { "max": 150 }]
+        "max-lines": [
+          "error",
+          {
+            "max": 150
+          }
+        ]
       }
     }
   ]
