@@ -1,10 +1,11 @@
-import Box from '@mui/material/Box';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Stepper from '@mui/material/Stepper';
 import * as React from 'react';
 import { Currency } from '@/components/steppers/currency';
 import Balance from '@/components/steppers/balance';
+import { Icon } from "@/components/icons/icon";
+import Finish from '@/components/steppers/finish';
 
 const steps = ['Currency', 'Balance', 'Finish'];
 
@@ -32,31 +33,28 @@ export default function SetUp() {
     };
     return (
         <div className='setup-container'>
-            <div>
-                <Box>
-                    <Stepper activeStep={activeStep} alternativeLabel sx={{ width: '92px' }}>
-                        {steps.map((label, index) => {
-                            const stepProps: { completed?: boolean } = {};
-                            const labelProps: {
-                                optional?: React.ReactNode;
-                            } = {};
-                            if (isStepOptional(index)) {
-                            }
-                            if (isStepSkipped(index)) {
-                                stepProps.completed = false;
-                            }
-                            return (
-                                <Step key={label} {...stepProps}>
-                                    <StepLabel {...labelProps} sx={{ minWidth: '400px' }}>{label}</StepLabel>
-                                    {activeStep === 0 && label === 'Currency' && <Currency onNext={handleNext} />}
-                                    {activeStep === 1 && label === 'Currency' && <Balance onNext={handleNext} />}
-                                    {activeStep === 2 && label === 'Currency' && <div>hello1112341234311</div>}
-                                </Step>
-                            );
-                        })}
-                    </Stepper>
-                </Box>
-            </div>
+            <Icon />
+            <Stepper activeStep={activeStep} alternativeLabel>
+                {steps.map((label, index) => {
+                    const stepProps: { completed?: boolean } = {};
+                    const labelProps: {
+                        optional?: React.ReactNode;
+                    } = {};
+                    if (isStepOptional(index)) {
+                    }
+                    if (isStepSkipped(index)) {
+                        stepProps.completed = false;
+                    }
+                    return (
+                        <Step key={label} {...stepProps}>
+                            <StepLabel {...labelProps} sx={{ minWidth: '400px' }}>{label}</StepLabel>
+                                {activeStep === 0 && label === 'Currency' && <Currency onNext={handleNext} />}
+                                {activeStep === 1 && label === 'Balance' && <Balance onNext={handleNext} />}
+                                {activeStep === 2 && label === 'Finish' && <Finish />}
+                        </Step>
+                    );
+                })}
+            </Stepper>
         </div>
     )
 }

@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F3F4F6;
+}
+
+.navbar-container {
+    display: flex;
+    height: 72px;
+    background-color: white;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.selected-nav-btn {
+    font-family: sans-serif;
+    background-color: white;
+    border: none;
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.navbar-btn {
+    background-color: white;
+    border: none;
+    color: #0F172A;
+    font-size: 16px;
+}
+
+.add-record {
+    background-color: #0166FF;
+    width: 99px;
+    height: 32px;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    color: white;
+}
+
+.navbar-front {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 120px;
+}
