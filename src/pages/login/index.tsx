@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icons/icon";
 import { ChangeEvent, useState } from "react"
 import axios from "axios"
-import { ProgressBar } from "react-loader-spinner";
+import { Vortex } from "react-loader-spinner";
 import { useRouter } from 'next/navigation'
 export default function LogIn() {
     const router = useRouter()
@@ -83,13 +83,14 @@ export default function LogIn() {
                         <input type="password" placeholder="Password" value={password} onChange={handleChangePassword} id="sign-input" />
                         <div style={{ color: "red" }}>{passwordError}</div>
 
-                        {loading ? <ProgressBar
+                        {loading ? <Vortex
                             visible={true}
                             height="80"
                             width="80"
-                            ariaLabel="progress-bar-loading"
+                            ariaLabel="vortex-loading"
                             wrapperStyle={{}}
-                            wrapperClass=""
+                            wrapperClass="vortex-wrapper"
+                            colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
                         /> : <button onClick={handleLogIn} className="sign-btn">Log In</button>}
                         <div style={{ color: "red" }}>{required}</div>
                     </div>

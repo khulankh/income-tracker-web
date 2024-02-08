@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icons/icon";
 import axios, { AxiosError } from "axios";
 import { useRouter } from 'next/navigation';
-import { ColorRing } from 'react-loader-spinner'
+import { MutatingDots } from 'react-loader-spinner'
 import { ChangeEvent, useState } from "react";
 
 export default function SignUp() {
@@ -115,15 +115,17 @@ export default function SignUp() {
                     <div style={{ color: "red" }}>{confirmPasswordError}</div>
 
                 </div>
-                <div style={{ display: "flex", flexDirection: 'column', gap: '40px', alignItems:'center' }}>
-                    {loading ? <ColorRing
+                <div style={{ display: "flex", flexDirection: 'column', gap: '40px', alignItems: 'center' }}>
+                    {loading ? <MutatingDots
                         visible={true}
-                        height="80"
-                        width="80"
-                        ariaLabel="color-ring-loading"
+                        height="100"
+                        width="100"
+                        color="#0166FF"
+                        secondaryColor="#0166FF"
+                        radius="12.5"
+                        ariaLabel="mutating-dots-loading"
                         wrapperStyle={{}}
-                        wrapperClass="color-ring-wrapper"
-                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                        wrapperClass=""
                     /> : <button onClick={handleSignUp} className="sign-btn">Sign Up</button>}
 
                     <div style={{ color: "red" }}>{required}</div>
