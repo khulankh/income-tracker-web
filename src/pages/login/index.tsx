@@ -47,7 +47,7 @@ export default function LogIn() {
                     console.log(response)
                     localStorage.setItem('user', 'true')
                     localStorage.setItem('userId', response.data.userId)
-                    router.push("/setup")
+                    router.push("/")
                 })
                 .catch((error) => {
                     if (axios.isAxiosError(error)) {

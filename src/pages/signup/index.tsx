@@ -79,7 +79,7 @@ export default function SignUp() {
                 });
                 setLoading(false)
                 console.log(response);
-                router.push("/login");
+                router.push("/setup");
             } catch (error) {
                 if (axios.isAxiosError(error)) {
                     const axiosError = error as AxiosError;
