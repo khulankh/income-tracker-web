@@ -4,7 +4,7 @@ import Stepper from '@mui/material/Stepper';
 import * as React from 'react';
 import { Currency } from '@/components/steppers/currency';
 import Balance from '@/components/steppers/balance';
-import { Icon } from "@/components/icons/icon";
+import { Icon } from '@mui/material';
 import Finish from '@/components/steppers/finish';
 
 const steps = ['Currency', 'Balance', 'Finish'];

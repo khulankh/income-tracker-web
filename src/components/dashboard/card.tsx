@@ -1,16 +1,16 @@
-import CardChip from "../icons/card-chip";
-import GeldWhite from "../icons/icon-white";
+import bg from '../../../public/card.png'
 
 export default function Card() {
 
     return (
-        <div className="card-container">
-            <div style={{ paddingLeft: '32px', paddingTop: '32px' }}> <GeldWhite /> </div>
-            <div style={{ display: 'flex', flexDirection:'column' }}>
-                <p style={{ color: 'white', opacity: '50%', fontSize: '16px' }}>Cash</p>
-                <p style={{ fontSize: '24px' }}>10,000.00</p>
+        <div className='card-container' style={{
+            backgroundImage: `url(${bg.src})`, width: '384px',
+            height: '216px',
+        }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', position: 'absolute', left: 30, bottom: 20 }}>
+                <p style={{ margin: 0, opacity: '50%', fontSize: '16px' }}>Cash</p>
+                <p style={{ margin: 0, fontSize: '24px' }}>10,000,000</p>
             </div>
-            <CardChip />
         </div>
     )
 }
