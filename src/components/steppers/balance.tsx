@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BalanceIcon from '../icons/balance';
+import BalanceIcon from '../icons/Balance';
 
 interface BalanceProps {
   onNext: (cashBalance: number) => void;

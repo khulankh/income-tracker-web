@@ -1,4 +1,4 @@
-import { Icon } from "@/components/icons/icon";
+import { Icon } from "@/components/icons/Icon";
 import axios, { AxiosError } from "axios";
 import { useRouter } from 'next/navigation';
 import { MutatingDots } from 'react-loader-spinner'
