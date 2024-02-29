@@ -6,6 +6,7 @@ import { Avatar } from "@mui/material";
 import IncomeExpense from "@/components/dashboard/Expense";
 import Card from "@/components/dashboard/Card";
 import CircleChart from "@/components/dashboard/CircleChart";
+import LastRecords from "@/components/dashboard/LastRecords";
 
 
 export default function Home() {
@@ -27,10 +28,8 @@ export default function Home() {
       <div className="navbar-container">
         <div className="navbar-front">
           <MainIcon />
-          {/* <Image style={{borderRadius:'100%'}} src={'/user.png'} width={40} height={40} alt=""/> */}
           <button className="selected-nav-btn">Dashboard</button>
           <button className="navbar-btn">Records</button>
-          {/* <Link href='/recored'> Records</Link> */}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', paddingRight: '120px', gap: '24px' }}>
           <button className="add-record">+ Record</button>
@@ -38,13 +37,16 @@ export default function Home() {
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
+        <div style={{ display: 'flex', gap: '80px', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
           <Card />
           <IncomeExpense type="Income" value={120000} />
           <IncomeExpense type="Expense" value={120000} />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
+        <div style={{ display: 'flex', gap: '80px', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
           <CircleChart />
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
+          <LastRecords />
         </div>
       </div>
     </div>
