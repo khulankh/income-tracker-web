@@ -7,6 +7,7 @@ import IncomeExpense from "@/components/dashboard/Expense";
 import Card from "@/components/dashboard/Card";
 import CircleChart from "@/components/dashboard/CircleChart";
 import LastRecords from "@/components/dashboard/LastRecords";
+import BarChart from "@/components/dashboard/BarChart";
 
 
 export default function Home() {
@@ -42,8 +43,9 @@ export default function Home() {
           <IncomeExpense type="Income" value={120000} />
           <IncomeExpense type="Expense" value={120000} />
         </div>
-        <div style={{ display: 'flex', gap: '80px', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
-          <CircleChart />
+        <div style={{ display: 'flex', gap: '150px', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
+        <BarChart />
+        <CircleChart />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
           <LastRecords />

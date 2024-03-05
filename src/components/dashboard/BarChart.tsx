@@ -45,7 +45,37 @@ const data = {
 
 function BarChart() {
   return (
-      <Bar
+    <div className="circle-chart-container">
+    <div
+        style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "680px",
+            height:"370px",
+            borderRadius: "12px",
+            border: "1px solid #E5E5E5",  
+
+        }}>
+              <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        padding: "0 20px",
+                    }}>
+                    <h3>Income - Expenses</h3>
+                </div>
+                <div
+                    style={{
+                        width: "100%",
+                        backgroundColor: "#F5F5F5",
+                        height: "1px",
+                        margin: "10px 0",
+                    }}
+                />
+ 
+               <Bar
         data={data}
         options={{
           plugins: {
@@ -54,7 +84,13 @@ function BarChart() {
             },
           },
         }}
+        style={{ maxHeight: "256px", }}
       />
+
+    </div>
+</div>
+     
+
   );
 }
 export default BarChart;
