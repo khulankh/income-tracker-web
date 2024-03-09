@@ -1,7 +1,6 @@
 import bg from '../../../public/card.png'
 
-export default function Card() {
-
+export const Card = () => {
     return (
         <div className='card-container' style={{
             backgroundImage: `url(${bg.src})`, width: '384px',
