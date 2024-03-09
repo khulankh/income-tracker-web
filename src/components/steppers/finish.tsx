@@ -1,4 +1,4 @@
-import FinishIcon from '../icons/finishIcon';
+import FinishIcon from '../icons/FinishIcon';
 import { useRouter } from 'next/router';
 export default function Finish () {
     const router = useRouter();
