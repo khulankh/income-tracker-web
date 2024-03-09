@@ -1,7 +1,7 @@
 import DownPer from "../icons/DownPercent"
 import UpPer from "../icons/UpPercent"
 import ExpenseDugui from "../icons/ExpenseDugui"
-import IncomeDugui from "../icons/IncomeDugui"
+import {IncomeDugui }from "../icons/IncomeDugui"
 
 type Props = {
     type: 'Income' | 'Expense';
