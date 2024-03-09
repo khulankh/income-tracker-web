@@ -1,4 +1,4 @@
-import { CurrencyIcon } from "../icons/currencyIcon"
+import { CurrencyIcon } from "../icons/CurrencyIcon"
 const currencyOptions = [
     "MNT - Mongolian Tugrik",
     "USD - United States Dollar",
