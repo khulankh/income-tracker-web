@@ -5,6 +5,7 @@ type RecordData = {
     title: string;
     createdAt: string;
     amount: number;
+    category: string;
 };
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 };
 
 export default function Lending({ data }: Props) {
-    const { title, createdAt, amount } = data;
+    const { title, createdAt, amount, category } = data;
     const currentDate = new Date();
     console.log(currentDate)
     const date1 = new Date(currentDate) 
@@ -33,7 +34,8 @@ export default function Lending({ data }: Props) {
             <div style={{ display: 'flex', gap: "16px" }}>
                 <HouseIcon />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <p style={{ margin: 0, color: 'black', fontSize: '16px' }}>{title}</p>
+                    <p style={{ margin: 0,  fontSize: '16px', color:'#84CC15' }}>{title}</p>
+                    <p style={{ margin: 0, color: '#B6BBC4', fontSize: '12px' }}>{category}</p>
                     <p style={{ margin: 0, color: '#6B7280', fontSize: '12px' }}>{Math.abs(hours)} hours ago</p>
                 </div>
             </div>

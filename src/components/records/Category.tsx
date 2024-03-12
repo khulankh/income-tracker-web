@@ -1,4 +1,5 @@
 import React from 'react';
+import EyeIcon from '../icons/See';
 
 interface Category {
     label: string;
@@ -14,7 +15,9 @@ const Category = () => {
     return (
         <div>
             {mappedCategories.map(category => (
-                <div key={category.label}>{category.label}</div>
+                <div className='categories'  key={category.label}>
+                    <EyeIcon/> {category.label}
+                </div>
             ))}
         </div>
     );
