@@ -6,6 +6,7 @@ type RecordData = {
     title: string;
     createdAt: string;
     amount: number;
+    category: string; // Add category to match Lending component
 };
 
 export default function LastRecords() {
@@ -33,5 +34,3 @@ export default function LastRecords() {
         </div>
     );
 }
-
-
