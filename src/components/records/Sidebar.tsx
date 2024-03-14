@@ -1,5 +1,6 @@
 import Category from "./Category";
 import CheckboxLabel from "./CheckboxLabel";
+import CreateRecordModal from "./CreateRecordModal";
 
 export default function Sidebar() {
     return (
@@ -7,7 +8,8 @@ export default function Sidebar() {
             <div style={{paddingLeft:'16px', display:'flex', flexDirection:'column', gap:"24px"}}>
                 <div className="sidebar-top">
                     <h3 style={{ fontSize: '24px', margin: 0 }}>Records</h3>
-                    <button className="addrec-btn">+ Add</button>
+                    <CreateRecordModal/>
+                    {/* <button className="addrec-btn">+ Add</button> */}
                     <input placeholder="Search" type="text" className="search-input" />
                 </div>
                 <div className="sidebar-types">
