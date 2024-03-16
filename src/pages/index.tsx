@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import IncomeExpense from "@/components/dashboard/Expense";
-import { Card } from "@/components/dashboard/Card";
 import CircleChart from "@/components/dashboard/CircleChart";
 import LastRecords from "@/components/dashboard/LastRecords";
 import BarChart from "@/components/dashboard/BarChart";
 import NavbarComponent from "@/components/dashboard/NavbarComponent";
+import { Card } from "@/components/dashboard/card";
 
 export default function Home() {
 

@@ -1,21 +1,22 @@
-import * as React from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { useState } from 'react';
 
 export default function ToggleBtn() {
-  const [alignment, setAlignment] = React.useState('web');
+  const [transaction, setTransaction] = useState('expense');
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
-    newAlignment: string,
+    newtransaction: string,
   ) => {
-    setAlignment(newAlignment);
+    setTransaction(newtransaction);
+    console.log(transaction)
   };
 
   return (
     <ToggleButtonGroup
       color="primary"
-      value={alignment}
+      value={transaction}
       exclusive
       onChange={handleChange}
       aria-label="Platform"
@@ -26,7 +27,7 @@ export default function ToggleBtn() {
           width: '172px',
           height: '40px',
           borderRadius: '20px',
-          backgroundColor: alignment === 'expense' ? '#0166FF' : 'initial',
+          backgroundColor: transaction === 'expense' ? '#0166FF' : 'initial',
         }}
       >
         Expense
@@ -37,7 +38,7 @@ export default function ToggleBtn() {
           width: '172px',
           height: '40px',
           borderRadius: '20px',
-          backgroundColor: alignment === 'income' ? '#0166FF' : 'initial', 
+          backgroundColor: transaction === 'income' ? '#0166FF' : 'initial',
         }}
       >
         Income
