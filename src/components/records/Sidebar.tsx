@@ -19,7 +19,6 @@ export default function Sidebar() {
                 <div className="sidebar-category">
                     <h6 style={{ fontSize: '16px', margin: 0 }}>Category</h6>
                     <Category />
-                    <button className='add-category-btn'>+ Add Category</button>
                 </div>
             </div>
         </div>

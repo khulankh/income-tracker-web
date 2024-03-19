@@ -6,8 +6,9 @@ type RecordData = {
     title: string;
     createdAt: string;
     amount: number;
-    category: string; // Add category to match Lending component
-};
+    category: string;
+    transactionType: string;
+}
 
 export default function LastRecords() {
     const [data, setData] = useState<RecordData[]>([]);

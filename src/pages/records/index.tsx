@@ -10,6 +10,7 @@ type RecordData = {
     createdAt: string;
     amount: number;
     category: string;
+    transactionType: string;
 };
 
 export default function Records() {
@@ -33,9 +34,12 @@ export default function Records() {
             <NavbarComponent />
             <div style={{display:"flex"}}>
                 <Sidebar />
+                <div style={{display:"flex", flexDirection:'column', gap:'12px', marginTop: '24px'}}>
                 {data.map((record, index) => (
                     <Lending key={index} data={record} />
                 ))}
+                </div>
+                
             </div>
         </div>
     )

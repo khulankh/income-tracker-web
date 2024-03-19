@@ -1,16 +1,15 @@
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { useState } from 'react';
 
-export default function ToggleBtn() {
-  const [transaction, setTransaction] = useState('expense');
+interface ToggleBtnProps {
+  transaction: string;
+  setTransaction: (newTransaction: string) => void;
+}
 
-  const handleChange = (
-    event: React.MouseEvent<HTMLElement>,
-    newtransaction: string,
-  ) => {
-    setTransaction(newtransaction);
-    console.log(transaction)
+export default function ToggleBtn({transaction, setTransaction}: ToggleBtnProps) {
+  
+  const handleChange = (_:unknown, newTransaction: string) => {
+    setTransaction(newTransaction);
   };
 
   return (
