@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import ToggleBtn from './ToggleBtn';
 import Box from '@mui/material/Box';
-import axios from 'axios'; // Corrected import statement
+import axios from 'axios';
 import { MutatingDots } from 'react-loader-spinner';
 import CategoryChoices from './CategoryChoices';
 
@@ -62,7 +62,7 @@ export default function CreateRecordModal() {
             category,
             createdAt: date,
             transactionType: transaction,
-            userId:'123131'
+            userId: '123131'
           }
         );
         setLoading(false);
@@ -78,7 +78,7 @@ export default function CreateRecordModal() {
 
   return (
     <div>
-      <Button className='addrec-btn' onClick={handleModal}>+ Add</Button>
+      <Button className='addrec-btn' sx={{'&:hover': { backgroundColor: 'blue' }}} onClick={handleModal}>+ Add</Button>
       <Modal
         open={open}
         onClose={handleModal}

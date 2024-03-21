@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React from 'react';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 type RecordData = {
     title: string;
@@ -6,13 +8,24 @@ type RecordData = {
     amount: number;
     category: string;
     transactionType: string;
+    _id: string
 };
 
 type Props = {
     data: RecordData;
+    setData: React.Dispatch<React.SetStateAction<RecordData[]>>;
 };
 
 export default function Lending({ data }: Props) {
+
+    const handleDeleteClick = async (id: string) => {
+        console.log(id)
+        const res = await axios.delete('http://localhost:8080/deleteTransaction', {
+            data: { id }
+        })
+        console.log(res)
+    }
+
     const IncomeExpense = (transactionType: string) => {
         if (transactionType === "income") {
             return "green";
@@ -21,7 +34,8 @@ export default function Lending({ data }: Props) {
         }
     };
 
-    const { title, createdAt, amount, category, transactionType } = data;
+
+    const { title, createdAt, amount, category, transactionType, _id } = data;
     const currentDate = new Date();
     const date1 = new Date(currentDate);
     const date2 = new Date(createdAt);
@@ -45,6 +59,7 @@ export default function Lending({ data }: Props) {
                 </div>
             </div>
             <p style={{ color: IncomeExpense(transactionType) }}>{amount}₮</p>
+            <button onClick={() => handleDeleteClick(_id)} className='delete-btn'> <RiDeleteBin6Line size={20} /> </button>
         </div>
     );
 }

@@ -5,7 +5,7 @@ import CircleChart from "@/components/dashboard/CircleChart";
 import LastRecords from "@/components/dashboard/LastRecords";
 import BarChart from "@/components/dashboard/BarChart";
 import NavbarComponent from "@/components/dashboard/NavbarComponent";
-import { Card } from "@/components/dashboard/card";
+import { Card } from "@/components/icons/Card";
 
 export default function Home() {
 

@@ -4,7 +4,6 @@ import Sidebar from "@/components/records/Sidebar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
 type RecordData = {
     title: string;
     createdAt: string;
@@ -29,17 +28,18 @@ export default function Records() {
         fetchData();
     }, []);
 
+
     return (
         <div className="records-container">
             <NavbarComponent />
-            <div style={{display:"flex"}}>
+            <div style={{ display: "flex" }}>
                 <Sidebar />
-                <div style={{display:"flex", flexDirection:'column', gap:'12px', marginTop: '24px'}}>
-                {data.map((record, index) => (
-                    <Lending key={index} data={record} />
-                ))}
+                <div style={{ display: "flex", flexDirection: 'column', gap: '12px', marginTop: '24px' }}>
+                    {data.map((record, index) => (
+                        <Lending key={index} data={record} />
+                    ))}
+                    
                 </div>
-                
             </div>
         </div>
     )
