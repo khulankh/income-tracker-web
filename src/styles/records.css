@@ -5,8 +5,9 @@
 }
 
 .addrec-btn {
-    width: 250px;
+    width: 150px;
     height: 32px;
+    margin-left: 50px;
     border-radius: 20px;
     background-color: #0166FF;
     color: white;
@@ -66,7 +67,6 @@
     gap: 8px;
     display: flex;
 }
-
 .sidebar-container {
     width: 282px;
     height: 1080px;
@@ -77,32 +77,27 @@
     border: #E5E7EB 1px solid;
     border-radius: 12px;
 }
-
 .rec-modal-container {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     gap: 24px;
 }
-
 .add-amount-input {
     width: 348px;
     height: 48px;
     border: 1px solid #0166FF;
     border-radius: 12px;
 }
-
 .add-amount-input::placeholder {
     padding-left: 5px;
     font-size: 16px;
 }
-
 .choose-category-input {
     width: 348px;
     height: 48px;
     border: 1px solid #0166FF;
     border-radius: 12px;
 }
-
 .choose-category-input::placeholder {
     padding-left: 16px;
     font-size: 16px;
@@ -121,4 +116,29 @@
   .modal-note::placeholder{
     padding-left: 5px;
     font-size: 16px;
+  }
+  .delete-btn {
+    color: red;
+    border: none;
+    background-color: #ffffff;
+  }
+  .delete-btn:hover {
+    color: #0166FF;
+    transition: 0.5s;
+  }
+  .delete-modal-container{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.cancel-btn {
+    color: green;
+    border: none;
+    background-color: white;
+}
+.cancel-btn:hover {
+    color: #0166FF;
+    transition: 0.5s;
   }

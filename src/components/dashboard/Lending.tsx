@@ -1,6 +1,7 @@
-import axios from 'axios';
+
 import React from 'react';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+
+import DeleteModal from '../records/DeleteRecordModal';
 
 export type RecordData = {
     _id: string;
@@ -16,14 +17,7 @@ type Props = {
     setData: React.Dispatch<React.SetStateAction<RecordData[]>>;
 };
 
-export default function Lending({ data }: Props) {
-    const handleDeleteClick = async (id: string) => {
-        console.log(id)
-        const res = await axios.delete('http://localhost:8080/deleteTransaction', {
-            data: { id }
-        })
-        console.log(res)
-    }
+export default function Lending({ data, setData }: Props) {
 
     const IncomeExpense = (transactionType: string) => {
         if (transactionType === "income") {
@@ -33,8 +27,7 @@ export default function Lending({ data }: Props) {
         }
     };
 
-
-    const { title, createdAt, amount, category, transactionType, _id } = data;
+    const { title, createdAt, amount, category, transactionType } = data;
     const currentDate = new Date();
     const date1 = new Date(currentDate);
     const date2 = new Date(createdAt);
@@ -57,8 +50,10 @@ export default function Lending({ data }: Props) {
                     <p style={{ margin: 0, color: '#6B7280', fontSize: '12px' }}>{Math.abs(hours)} hours ago</p>
                 </div>
             </div>
-            <p style={{ color: IncomeExpense(transactionType) }}>{amount}₮</p>
-            <button onClick={() => handleDeleteClick(_id)} className='delete-btn'> <RiDeleteBin6Line size={20} /> </button>
+            <div style={{display:'flex', gap: "20px"}}>
+                <p style={{ color: IncomeExpense(transactionType) , margin : 0 }}>{amount}₮</p>
+                <DeleteModal data={data} setData={setData} />
+            </div>
         </div>
     );
 }
