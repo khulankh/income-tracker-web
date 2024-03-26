@@ -22,6 +22,7 @@ export default function Records() {
             try {
                 const response = await axios.get<RecordData[]>('http://localhost:8080/getTransactions');
                 setData(response.data);
+                console.log(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

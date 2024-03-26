@@ -1,29 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Lending from "./Lending";
-import axios from 'axios';
+import React from 'react';
+import Lending, { RecordData } from "./Lending";
 
-type RecordData = {
-    title: string;
-    createdAt: string;
-    amount: number;
-    category: string;
-    transactionType: string;
-}
-
-export default function LastRecords() {
-    const [data, setData] = useState<RecordData[]>([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get<RecordData[]>('http://localhost:8080/getTransactions');
-                setData(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+export default function LastRecords({data}: {data: RecordData[]}) {
 
     return (
         <div className='lastrec-container'>

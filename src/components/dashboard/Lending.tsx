@@ -1,6 +1,6 @@
 import React from 'react';
 
-type RecordData = {
+export type RecordData = {
     title: string;
     createdAt: string;
     amount: number;
