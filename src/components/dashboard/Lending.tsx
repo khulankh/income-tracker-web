@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
-type RecordData = {
+export type RecordData = {
     title: string;
     createdAt: string;
     amount: number;

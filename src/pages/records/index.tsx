@@ -1,16 +1,9 @@
-import Lending from "@/components/dashboard/Lending";
+import Lending, { RecordData } from "@/components/dashboard/Lending";
 import NavbarComponent from "@/components/dashboard/NavbarComponent";
 import Sidebar from "@/components/records/Sidebar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-type RecordData = {
-    title: string;
-    createdAt: string;
-    amount: number;
-    category: string;
-    transactionType: string;
-};
 
 export default function Records() {
 
@@ -21,6 +14,7 @@ export default function Records() {
             try {
                 const response = await axios.get<RecordData[]>('http://localhost:8080/getTransactions');
                 setData(response.data);
+                console.log(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -36,7 +30,7 @@ export default function Records() {
                 <Sidebar />
                 <div style={{ display: "flex", flexDirection: 'column', gap: '12px', marginTop: '24px' }}>
                     {data.map((record, index) => (
-                        <Lending key={index} data={record} />
+                        <Lending key={index} data={record} setData={setData} />
                     ))}
                     
                 </div>

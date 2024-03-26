@@ -1,6 +1,6 @@
 import MainIcon from "../icons/NavbarGeld";
 import { Avatar } from "@mui/material";
-import { useRouter } from 'next/router'; // Importing useRouter from next/router
+import { useRouter } from 'next/router'; 
 import CreateRecordModal from "../records/CreateRecordModal";
 
 export default function NavbarComponent() {
@@ -9,13 +9,16 @@ export default function NavbarComponent() {
   const handleRecordsButtonClick = () => {
     router.push('/records'); 
   };
+  const handleDashboardButtonClick = () => {
+    router.push('/')
+  }
 
   return (
     <div className="navbar-container">
       <div className="navbar-front">
         <MainIcon />
-        <button className="selected-nav-btn">Dashboard</button>
-        <button className="navbar-btn" onClick={handleRecordsButtonClick}>Records</button> 
+        <button className="navbar-btn" onClick={handleDashboardButtonClick}>Dashboard</button>
+        <button className="navbar-btn" onClick={handleRecordsButtonClick}>Records</button>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', paddingRight: '120px', gap: '24px' }}>
         <CreateRecordModal/>

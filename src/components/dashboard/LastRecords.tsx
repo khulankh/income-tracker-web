@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Lending from "./Lending";
+import Lending, { RecordData } from "./Lending";
 import axios from 'axios';
-
-type RecordData = {
-    title: string;
-    createdAt: string;
-    amount: number;
-    category: string;
-    transactionType: string;
-}
 
 export default function LastRecords() {
     const [data, setData] = useState<RecordData[]>([]);
@@ -30,7 +22,7 @@ export default function LastRecords() {
             <h3 className='lastrec-p'>Last Records</h3>
             <hr style={{ color: '#f3f4f5', opacity: '0.6' }}></hr>
             {data.map((record, index) => (
-                <Lending key={index} data={record} />
+                <Lending key={index} data={record} setData={setData} />
             ))}
         </div>
     );
