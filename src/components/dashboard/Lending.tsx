@@ -2,13 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
-export type RecordData = {
+type RecordData = {
+    _id: string;
     title: string;
     createdAt: string;
     amount: number;
     category: string;
     transactionType: string;
-    _id: string
 };
 
 type Props = {
@@ -17,7 +17,6 @@ type Props = {
 };
 
 export default function Lending({ data }: Props) {
-
     const handleDeleteClick = async (id: string) => {
         console.log(id)
         const res = await axios.delete('http://localhost:8080/deleteTransaction', {
