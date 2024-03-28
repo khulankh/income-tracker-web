@@ -8,13 +8,15 @@ import NavbarComponent from "@/components/dashboard/NavbarComponent";
 import { Card } from "@/components/icons/Card";
 import axios from "axios";
 
-type RecordData = {
+export type RecordData = {
+  _id: string;
   title: string;
   createdAt: string;
   amount: number;
   category: string;
   transactionType: string;
-}
+};
+
 
 export default function Home() {
 
@@ -58,7 +60,7 @@ export default function Home() {
           <CircleChart />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
-          <LastRecords data={data}/>
+          <LastRecords />
         </div>
       </div>
     </div>

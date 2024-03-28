@@ -31,19 +31,25 @@ export default function CreateRecordModal() {
   const [title, setTitle] = useState('');
   const [transaction, setTransaction] = useState('expense');
   const [required, setRequired] = useState('');
+
   const handleModal = () => setOpen((prev) => !prev);
+
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(e.target.value);
   };
+
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDate(e.target.value);
   };
+
   const handleNoteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNote(e.target.value);
   };
+
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
+
   const handleCreateRecord = async (): Promise<void> => {
     if (
       amount === '' ||
@@ -54,18 +60,26 @@ export default function CreateRecordModal() {
       setRequired('Please enter all inputs');
     } else {
       try {
-        const response = await axios.post("http://localhost:8080/createTransaction",
-          {
-            amount: Number(amount),
-            title: title,
-            note: note,
-            category,
-            createdAt: date,
-            transactionType: transaction,
-            userId: '123131'
-          }
-        );
+        const response = await axios.post("http://localhost:8080/createTransaction", {
+          amount: Number(amount),
+          title: title,
+          note: note,
+          category,
+          createdAt: date,
+          transactionType: transaction,
+          userId: '123131'
+        });
+
+        setAmount('');
+        setCategory('');
+        setDate('');
+        setNote('');
+        setTitle('');
+        setTransaction('expense');
+        setRequired('');
         setLoading(false);
+        handleModal();
+
         console.log(response);
       } catch (err) {
         if (axios.isAxiosError(err)) {
@@ -106,7 +120,6 @@ export default function CreateRecordModal() {
                     borderRadius: '12px',
                   }} value={date} onChange={handleDateChange} />
                 </div>
-
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                   <div>
                     <p>Title</p>
@@ -116,27 +129,7 @@ export default function CreateRecordModal() {
                     <p>Note</p>
                     <input type="text" placeholder='Write here' className='modal-note' value={note} onChange={handleNoteChange} />
                   </div>
-
-                  {loading ? <MutatingDots
-                    visible={true}
-                    height="100"
-                    width="100"
-                    color="#0166FF"
-                    secondaryColor="#0166FF"
-                    radius="12.5"
-                    ariaLabel="mutating-dots-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                  /> : <button style={{
-                    width: '348px',
-                    height: '48px',
-                    borderRadius: '20px',
-                    backgroundColor: '#0166FF',
-                    color: 'white',
-                    border: 'none',
-                  }}
-                    onClick={handleCreateRecord}
-                  >Add Expense</button>}
+                  {loading ? <MutatingDots  visible={true}  height="100"  width="100"  color="#0166FF"  secondaryColor="#0166FF"  radius="12.5"  ariaLabel="mutating-dots-loading"  wrapperStyle={{}} wrapperClass=""/> : <button style={{width: '348px',height: '48px',borderRadius: '20px',backgroundColor: '#0166FF',color: 'white',border: 'none',}}onClick={handleCreateRecord}>Add Expense</button>}
                   <div style={{ color: "red" }}>{required}</div>
                 </div>
               </div>

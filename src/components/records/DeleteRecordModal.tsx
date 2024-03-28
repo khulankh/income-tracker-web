@@ -37,7 +37,7 @@ const DeleteModal: React.FC<Props> = ({ data, setData }) => {
     };
 
     return (
-        <div>
+        <div style={{display:'flex',alignItems:'center'}}>
             <button onClick={handleModal} className='delete-btn'> <RiDeleteBin6Line size={20} /> </button>
             <Modal
                 open={open}
