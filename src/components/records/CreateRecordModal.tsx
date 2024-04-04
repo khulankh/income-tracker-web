@@ -108,7 +108,7 @@ export default function CreateRecordModal() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <p>Amount</p>
-                <input className='add-amount-input' type="text" placeholder='₮ 0.00' value={amount} onChange={handleAmountChange} />
+                <input className='add-amount-input' type="number" placeholder='₮ 0.00' value={amount} onChange={handleAmountChange} />
                 <p>Category</p>
                 <CategoryChoices category={category} setCategory={setCategory} />
                 <p>Date</p>

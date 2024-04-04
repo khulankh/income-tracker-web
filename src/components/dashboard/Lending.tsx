@@ -3,6 +3,7 @@ import React from 'react';
 
 import DeleteModal from '../records/DeleteRecordModal';
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from 'react-icons/fa';
+import UpdateRecordModal from '../records/UpdateRecordModal';
 
 export type RecordData = {
     _id: string;
@@ -49,6 +50,7 @@ export default function Lending({ data, setData }: Props) {
             </div>
             <div style={{display:'flex', gap: "20px"}}>
                 <p style={{ color , margin : 0 }}>{amount}₮</p>
+                <UpdateRecordModal data={data} setData={setData} />
                 <DeleteModal data={data} setData={setData} />
             </div>
         </div>
