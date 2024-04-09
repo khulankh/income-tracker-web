@@ -9,7 +9,7 @@
     height: 32px;
     margin-left: 50px;
     border-radius: 20px;
-    background-color: #0166FF;
+    background-color: #6f2dbd;
     color: white;
     border: none;
     font-size: 16px;
@@ -34,7 +34,7 @@
 .add-amount-input {
     width: 348px;
     height: 48px;
-    border: 1px solid #0166FF;
+    border: 1px solid #6f2dbd;
     border-radius: 12px;
 }
 
@@ -46,7 +46,7 @@
 .choose-category-input {
     width: 348px;
     height: 48px;
-    border: 1px solid #0166FF;
+    border: 1px solid #6f2dbd;
     border-radius: 12px;
 }
 
@@ -58,7 +58,7 @@
 .modal-note {
     width: 348px;
     height: 48px;
-    border: 1px solid #0166FF;
+    border: 1px solid #6f2dbd;
     border-radius: 12px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .delete-btn:hover {
-    color: #0166FF;
+    color: #6f2dbd;
     transition: 0.5s;
 }
 
@@ -99,17 +99,17 @@
 }
 
 .cancel-btn:hover {
-    color: #0166FF;
+    color: #6f2dbd;
     transition: 0.5s;
 }
 
 .update-btn {
-    color: rgb(255, 204, 0);
+    color: #0166FF;
     border: none;
     background-color: white;
 }
 
 .update-btn:hover {
-    color: #0166FF;
+    color: #6f2dbd;
     transition: 0.5s;
 }

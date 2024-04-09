@@ -29,7 +29,7 @@ const DeleteModal: React.FC<Props> = ({ data, setData }) => {
 
     const handleDeleteClick = async () => {
         try {
-            await axios.delete('http://localhost:8080/deleteTransaction', { data: { id: data._id } });
+            await axios.delete('https://income-tracker-service.onrender.com/deleteTransaction', { data: { id: data._id } });
             setData((prevData: RecordData[]) => prevData.filter(record => record._id !== data._id));
         } catch (error) {
             console.error('Error deleting record:', error);

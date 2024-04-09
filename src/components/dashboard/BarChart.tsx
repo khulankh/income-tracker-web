@@ -46,13 +46,13 @@ const data = {
 
 function BarChart() {
   return (
-    <div className="circle-chart-container">
+    <div className="circle-chart-container" style={{justifyContent:'center', alignContent:'center', display:'flex', paddingTop:'20px'}}>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "680px",
-          height: "370px",
+          width: "650px",
+          height: "340px",
           borderRadius: "12px",
           border: "1px solid #E5E5E5",
 

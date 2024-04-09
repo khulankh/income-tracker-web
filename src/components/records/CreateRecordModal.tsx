@@ -15,7 +15,7 @@ const style = {
   width: 350,
   height: 800,
   bgcolor: 'background.paper',
-  border: '2px solid #0166FF',
+  border: '2px solid #6f2dbd',
   borderRadius: 3,
   boxShadow: 24,
   p: 4,
@@ -60,7 +60,7 @@ export default function CreateRecordModal() {
       setRequired('Please enter all inputs');
     } else {
       try {
-        const response = await axios.post("http://localhost:8080/createTransaction", {
+        const response = await axios.post("https://income-tracker-service.onrender.com/createTransaction", {
           amount: Number(amount),
           title: title,
           note: note,
@@ -116,7 +116,7 @@ export default function CreateRecordModal() {
                   <input type="date" style={{
                     width: '348px',
                     height: '48px',
-                    border: '1px solid #0166FF',
+                    border: '1px solid #6f2dbd',
                     borderRadius: '12px',
                   }} value={date} onChange={handleDateChange} />
                 </div>
@@ -129,7 +129,7 @@ export default function CreateRecordModal() {
                     <p>Note</p>
                     <input type="text" placeholder='Write here' className='modal-note' value={note} onChange={handleNoteChange} />
                   </div>
-                  {loading ? <MutatingDots  visible={true}  height="100"  width="100"  color="#0166FF"  secondaryColor="#0166FF"  radius="12.5"  ariaLabel="mutating-dots-loading"  wrapperStyle={{}} wrapperClass=""/> : <button style={{width: '348px',height: '48px',borderRadius: '20px',backgroundColor: '#0166FF',color: 'white',border: 'none',}}onClick={handleCreateRecord}>Add Expense</button>}
+                  {loading ? <MutatingDots  visible={true}  height="100"  width="100"  color="#6f2dbd"  secondaryColor="#6f2dbd"  radius="12.5"  ariaLabel="mutating-dots-loading"  wrapperStyle={{}} wrapperClass=""/> : <button style={{width: '348px',height: '48px',borderRadius: '20px',backgroundColor: '#6f2dbd',color: 'white',border: 'none',}}onClick={handleCreateRecord}>Add Expense</button>}
                   <div style={{ color: "red" }}>{required}</div>
                 </div>
               </div>

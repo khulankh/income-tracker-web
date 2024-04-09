@@ -1,4 +1,3 @@
-
 import axios, { AxiosError } from "axios";
 import { useRouter } from 'next/navigation';
 import { MutatingDots } from 'react-loader-spinner'
@@ -80,7 +79,7 @@ export default function SignUp() {
                 });
                 setLoading(false)
                 console.log(response);
-                router.push("/setup");
+                router.push("/");
             } catch (error) {
                 if (axios.isAxiosError(error)) {
                     const axiosError = error as AxiosError;
@@ -121,8 +120,8 @@ export default function SignUp() {
                         visible={true}
                         height="100"
                         width="100"
-                        color="#0166FF"
-                        secondaryColor="#0166FF"
+                        color="#6f2dbd"
+                        secondaryColor="#6f2dbd"
                         radius="12.5"
                         ariaLabel="mutating-dots-loading"
                         wrapperStyle={{}}
@@ -130,11 +129,11 @@ export default function SignUp() {
                     /> : <button onClick={handleSignUp} className="sign-btn">Sign Up</button>}
 
                     <div style={{ color: "red" }}>{required}</div>
-                    <p>Already have account? <a href="../login" style={{ color: '#0166FF' }}>Log In</a></p>
+                    <p>Already have account? <a href="../login" style={{ color: '#6f2dbd' }}>Log In</a></p>
                 </div>
 
             </div>
-            <div style={{ backgroundColor: '#0166FF', height: '100vh', width: '50vw' }}></div>
+            <div style={{ backgroundColor: '#6f2dbd', height: '100vh', width: '50vw' }}></div>
         </div>
     )
 }

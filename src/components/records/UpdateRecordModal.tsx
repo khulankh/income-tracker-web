@@ -15,7 +15,7 @@ const style = {
   width: 400,
   height: 600,
   bgcolor: 'background.paper',
-  border: '2px solid #0166FF',
+  border: '2px solid #6f2dbd',
   borderRadius: 3,
   boxShadow: 24,
   p: 4,
@@ -36,7 +36,7 @@ const UpdateRecordModal: FC<Props> = ({ data, setData }) => {
 
   const UpdateRecord = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/updateTransaction/${data._id}`, {
+      const response = await axios.put(`https://income-tracker-service.onrender.com/updateTransaction/${data._id}`, {
         title,
         amount,
         category
@@ -74,7 +74,7 @@ const UpdateRecordModal: FC<Props> = ({ data, setData }) => {
             <CategoryChoices category={category} setCategory={setCategory} />
             <p>Title</p>
             <input type="text" placeholder='Write here again' className='modal-note' value={title} onChange={handleTitleChange} />
-            <Button onClick={UpdateRecord}>Update</Button>
+            <Button style={{backgroundColor:'#6f2dbd', color:'white'}} onClick={UpdateRecord}>Update</Button>
           </div>
         </Box>
       </Modal>

@@ -9,7 +9,7 @@ export default function LastRecords() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<RecordData[]>('http://localhost:8080/getTransactions');
+                const response = await axios.get<RecordData[]>('https://income-tracker-service.onrender.com/getTransactions');
                 setLendingData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

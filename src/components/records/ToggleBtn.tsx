@@ -26,7 +26,7 @@ export default function ToggleBtn({transaction, setTransaction}: ToggleBtnProps)
           width: '172px',
           height: '40px',
           borderRadius: '20px',
-          backgroundColor: transaction === 'expense' ? '#0166FF' : 'initial',
+          backgroundColor: transaction === 'expense' ? '#6f2dbd' : 'initial',
         }}
       >
         Expense
@@ -37,7 +37,7 @@ export default function ToggleBtn({transaction, setTransaction}: ToggleBtnProps)
           width: '172px',
           height: '40px',
           borderRadius: '20px',
-          backgroundColor: transaction === 'income' ? '#0166FF' : 'initial',
+          backgroundColor: transaction === 'income' ? '#6f2dbd' : 'initial',
         }}
       >
         Income
