@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { MdOutlineCancel } from 'react-icons/md';
-import { RecordData } from "@/components/dashboard/Lending";
+import { RecordData } from "../../components/dashboard/Lending";
 import axios from 'axios';
 
 const style = {

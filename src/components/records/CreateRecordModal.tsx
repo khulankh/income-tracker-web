@@ -67,7 +67,7 @@ export default function CreateRecordModal() {
           category,
           createdAt: date,
           transactionType: transaction,
-          userId: '123131'
+          userId: localStorage.getItem('userId')
         });
 
         setAmount('');
@@ -92,7 +92,7 @@ export default function CreateRecordModal() {
 
   return (
     <div>
-      <Button className='addrec-btn' sx={{'&:hover': { backgroundColor: 'blue' }}} onClick={handleModal}>+ Add</Button>
+      <Button className='addrec-btn' sx={{ '&:hover': { backgroundColor: 'blue' } }} onClick={handleModal}>+ Add</Button>
       <Modal
         open={open}
         onClose={handleModal}
@@ -129,7 +129,7 @@ export default function CreateRecordModal() {
                     <p>Note</p>
                     <input type="text" placeholder='Write here' className='modal-note' value={note} onChange={handleNoteChange} />
                   </div>
-                  {loading ? <MutatingDots  visible={true}  height="100"  width="100"  color="#6f2dbd"  secondaryColor="#6f2dbd"  radius="12.5"  ariaLabel="mutating-dots-loading"  wrapperStyle={{}} wrapperClass=""/> : <button style={{width: '348px',height: '48px',borderRadius: '20px',backgroundColor: '#6f2dbd',color: 'white',border: 'none',}}onClick={handleCreateRecord}>Add Expense</button>}
+                  {loading ? <MutatingDots visible={true} height="100" width="100" color="#6f2dbd" secondaryColor="#6f2dbd" radius="12.5" ariaLabel="mutating-dots-loading" wrapperStyle={{}} wrapperClass="" /> : <button style={{ width: '348px', height: '48px', borderRadius: '20px', backgroundColor: '#6f2dbd', color: 'white', border: 'none', }} onClick={handleCreateRecord}>Add Expense</button>}
                   <div style={{ color: "red" }}>{required}</div>
                 </div>
               </div>

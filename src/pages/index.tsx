@@ -1,32 +1,21 @@
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-import IncomeExpense from "@/components/dashboard/IncomeExpense";
-import CircleChart from "@/components/dashboard/CircleChart";
-import LastRecords from "@/components/dashboard/LastRecords";
-import BarChart from "@/components/dashboard/BarChart";
-import NavbarComponent from "@/components/dashboard/NavbarComponent";
-import { Card } from "@/components/icons/Card";
+import IncomeExpense from "../components/dashboard/IncomeExpense";
+import { DoughnutChart } from "../components/dashboard/DoughnutChart";
+import LastRecords from "../components/dashboard/LastRecords";
+import NavbarComponent from "../components/dashboard/NavbarComponent";
+import { Card } from "../components/icons/Card";
 import axios from "axios";
-
-export type RecordData = {
-  _id: string;
-  title: string;
-  createdAt: string;
-  amount: number;
-  category: string;
-  transactionType: string;
-};
-
+import { RecordData } from "../components/dashboard/Lending";
 
 export default function Home() {
-
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const isUserLoggedIn = () => {
       const user = localStorage.getItem("user");
       if (!user) {
-        router.replace('/login')
+        router.replace('/login');
       }
     };
     isUserLoggedIn();
@@ -35,17 +24,20 @@ export default function Home() {
   const [data, setData] = useState<RecordData[]>([]);
 
   useEffect(() => {
-      const fetchData = async () => {
-          try {
-              const response = await axios.get<RecordData[]>('https://income-tracker-service.onrender.com/getTransactions');
-              setData(response.data);
-          } catch (error) {
-              console.error('Error fetching data:', error);
-          }
-      };
-      fetchData();
+    const fetchData = async () => {
+      try {
+        const response = await axios.get<RecordData[]>('https://income-tracker-service.onrender.com/getTransactions');
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
   }, []);
-  
+
+  const expenses = data.filter(e => e.transactionType === 'expense');
+  const incomes = data.filter(e => e.transactionType === 'income');
+
   return (
     <div className="main-container">
       <NavbarComponent />
@@ -56,8 +48,8 @@ export default function Home() {
           <IncomeExpense type="Expense" data={data} />
         </div>
         <div style={{ display: 'flex', gap: '150px', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
-          <BarChart />
-          <CircleChart />
+          <DoughnutChart data={incomes} label="income" />
+          <DoughnutChart data={expenses} label='expense' />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '32px', paddingLeft: '120px', paddingRight: '120px' }}>
           <LastRecords />

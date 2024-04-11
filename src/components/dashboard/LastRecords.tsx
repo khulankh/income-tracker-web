@@ -10,7 +10,14 @@ export default function LastRecords() {
         const fetchData = async () => {
             try {
                 const response = await axios.get<RecordData[]>('https://income-tracker-service.onrender.com/getTransactions');
-                setLendingData(response.data);
+                const id = localStorage.getItem("userId")
+                const userData = response.data.filter((transaction) => {
+                    console.log(transaction.userId)
+                    console.log(id)
+                    return transaction.userId === id
+                })
+                console.log(userData)
+                setLendingData(userData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

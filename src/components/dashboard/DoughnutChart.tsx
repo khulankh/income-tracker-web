@@ -1,46 +1,51 @@
-import React from "react";
+import React, { FC } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { RecordData } from './Lending';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const categories = ["Bills", "Food", "Shopping", "Insurance", "Clothing"];
-const expenses = [300, 50, 100, 800, 15];
-const colors = ["#1C64F2", "#E74694", "#FDBA8C", `#16BDCA`, `#F2901C`];
-
-const sum = expenses.reduce((a, b) => a + b, 0);
-
-const dataSet = {
-    labels: categories,
-    datasets: [
-        {
-            data: expenses,
-            backgroundColor: colors,
-        },
-    ],
+type Props = {
+    data: RecordData[];
+    label: string;
 };
 
-const options = {
-    plugins: {
-        legend: {
-            display: false,
-        },
-    },
-};
+export const DoughnutChart: FC<Props> = ({ data , label }) => {
+    const categories = data.map(e => e.category);
+    const colors = ["#1C64F2", "#E74694", "#FDBA8C", `#16BDCA`, `#F2901C`,  `#adff02`, `#be0aff`, `#ffff00`, `#ff0000`, `#1cffbb`];
 
-export default function CircleChart() {
+    const amounts = data.map(e => e.amount);
+    const sum = data.reduce((acc, cur) => acc + cur.amount, 0);
+
+    const dataSet = {
+        labels: categories,
+        datasets: [
+            {
+                data: amounts,
+                backgroundColor: colors,
+            },
+        ],
+    };
+
+    const options = {
+        plugins: {
+            legend: {
+                display: false,
+            },
+        },
+    };
+
     return (
-        <div className="circle-chart-container" style={{justifyContent:'center', alignContent:'center', display:'flex', paddingTop:'20px'}}>
+        <div className="circle-chart-container" style={{ justifyContent: 'center', alignContent: 'center', display: 'flex', paddingTop: '20px' }}>
             <div
                 style={{
                     display: "flex",
                     flexDirection: "column",
                     width: "650px",
-                    height:"340px",
-                    paddingLeft:'10px',
+                    height: "340px",
+                    paddingLeft: '10px',
                     borderRadius: "12px",
                     border: "1px solid #E5E5E5",
-
                 }}>
                 <div
                     style={{
@@ -50,7 +55,7 @@ export default function CircleChart() {
                         justifyContent: "space-between",
                         padding: "0 20px",
                     }}>
-                    <h3>Income - Expenses</h3>
+                    <h3>{label}</h3>
                     <p>Total: {sum}₮</p>
                 </div>
                 <div
@@ -72,14 +77,14 @@ export default function CircleChart() {
                         options={options}
                         style={{ maxHeight: "156px", maxWidth: "156px" }}
                     />
-                    <Labels />
+                    <Labels categories={categories} colors={colors} expenses={amounts} sum={sum}/>
                 </div>
             </div>
         </div>
     );
 }
 
-const Labels = () => {
+const Labels: FC<{categories: string[], colors: string[], expenses: number[], sum: number}> = ({categories, colors, expenses, sum  }) => {
     return (
         <div>
             {categories.map((category, index) => (

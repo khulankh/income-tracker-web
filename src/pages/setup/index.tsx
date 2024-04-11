@@ -2,10 +2,10 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Stepper from '@mui/material/Stepper';
 import * as React from 'react';
-import { Currency } from '@/components/steppers/Currency';
-import Balance from '@/components/steppers/Balance';
+import { Currency } from '../../components/steppers/Currency';
+import Balance from '../../components/steppers/Balance';
 import { Icon } from '@mui/material';
-import Finish from '@/components/steppers/Finish';
+import Finish from '../../components/steppers/Finish';
 
 const steps = ['Currency', 'Balance', 'Finish'];
 

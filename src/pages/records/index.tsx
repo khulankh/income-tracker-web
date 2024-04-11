@@ -1,6 +1,6 @@
-import Lending, { RecordData } from "@/components/dashboard/Lending";
-import NavbarComponent from "@/components/dashboard/NavbarComponent";
-import Sidebar from "@/components/records/Sidebar";
+import Lending, { RecordData } from "../../components/dashboard/Lending";
+import NavbarComponent from "../../components/dashboard/NavbarComponent";
+import Sidebar from "../../components/records/Sidebar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -14,7 +14,14 @@ export default function Records() {
         const fetchData = async () => {
             try {
                 const response = await axios.get<RecordData[]>('https://income-tracker-service.onrender.com/getTransactions');
-                setData(response.data);
+                const id = localStorage.getItem("userId")
+                const userData = response.data.filter((transaction) => {
+                    console.log(transaction.userId)
+                    console.log(id)
+                    return transaction.userId === id
+                })
+                console.log(userData)
+                setData(userData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
