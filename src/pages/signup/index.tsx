@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { useRouter } from 'next/navigation';
 import { MutatingDots } from 'react-loader-spinner'
 import { ChangeEvent, useState } from "react";
-import { TestIcon } from "../../components/icons/Icon";
+import { TestIcon } from "../../components/dashboard/Icon";
 
 export default function SignUp() {
     const router = useRouter()

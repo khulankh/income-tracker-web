@@ -1,4 +1,4 @@
-import { TestIcon } from "../../components/icons/Icon";
+import { TestIcon } from "../../components/dashboard/Icon";
 import { ChangeEvent, useState } from "react"
 import axios from "axios"
 import { Vortex } from "react-loader-spinner";
