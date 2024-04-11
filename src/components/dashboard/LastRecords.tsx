@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Lending, { RecordData } from "./Lending";
 import axios from 'axios';
 
-
 export default function LastRecords() {
     const [lendingData, setLendingData] = useState<RecordData[]>([]);
 
