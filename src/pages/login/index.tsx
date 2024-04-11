@@ -1,4 +1,4 @@
-import { Icon } from "../../components/icons/Icon";
+import { TestIcon } from "../../components/icons/Icon";
 import { ChangeEvent, useState } from "react"
 import axios from "axios"
 import { Vortex } from "react-loader-spinner";
@@ -65,7 +65,7 @@ export default function LogIn() {
         <div className="signup-container" >
             <div style={{ height: '100vh', width: '50vw', display: "flex", flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '40px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', alignItems: 'center' }}>
-                    <Icon />
+                    <TestIcon />
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                         <div style={{ fontSize: '24px', color: '#0F172A' }}>
                             Welcome Back

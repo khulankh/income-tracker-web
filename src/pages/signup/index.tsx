@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { useRouter } from 'next/navigation';
 import { MutatingDots } from 'react-loader-spinner'
 import { ChangeEvent, useState } from "react";
-import { Icon } from "../../components/icons/Icon";
+import { TestIcon } from "../../components/icons/Icon";
 
 export default function SignUp() {
     const router = useRouter()
@@ -93,7 +93,7 @@ export default function SignUp() {
     return (
         <div className="signup-container" >
             <div style={{ height: '100vh', width: '50vw', display: "flex", flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
-                <Icon />
+                <TestIcon />
                 <div style={{ fontSize: '24px', color: '#0F172A' }}>
                     Create Geld account
                 </div>

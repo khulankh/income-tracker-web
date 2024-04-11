@@ -1,4 +1,4 @@
-export const Icon = () => {
+export const TestIcon = () => {
     return (
         <svg width="94" height="35" viewBox="0 0 94 35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.1294 13.1825V5.40479H14.1822V13.1825H6.23499V21.1298H14.1822V28.9075H22.1294V21.1298H30.0766V13.1825H22.1294ZM22.1294 20.9603H14.1822V13.3532H22.1294V20.9603Z" fill="#0166FF" />
