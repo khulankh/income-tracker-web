@@ -26,7 +26,6 @@ export const DoughnutChart: FC<Props> = ({ data , label }) => {
             },
         ],
     };
-
     const options = {
         plugins: {
             legend: {
