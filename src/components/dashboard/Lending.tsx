@@ -50,7 +50,7 @@ export default function Lending({ data, setData }: Props) {
                 </div>
             </div>
             <div style={{ display: 'flex', gap: "20px" }}>
-                <p style={{ color, margin: 0 }}>{amount}₮</p>
+                <p style={{ color, margin: 0, fontSize:'20px' }}>{amount}₮</p>
                 <UpdateRecordModal data={data} setData={setData} />
                 <DeleteModal data={data} setData={setData} />
             </div>

@@ -12,15 +12,16 @@ export default function NavbarComponent() {
   const handleDashboardButtonClick = () => {
     router.push('/')
   }
-
 const toggleLogin = ()=>  router.push('/login');
 
   return (
     <div className="navbar-container">
       <div className="navbar-front">
         <MainIcon />
+        <div style={{display:'flex', gap:'8px'}}>
         <button className="navbar-btn" onClick={handleDashboardButtonClick}>Dashboard</button>
         <button className="navbar-btn" onClick={handleRecordsButtonClick}>Records</button>
+        </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', paddingRight: '120px', gap: '24px' }}>
         <CreateRecordModal/>

@@ -4,7 +4,7 @@ body {
 
 .main-container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #F3F4F6;
 }
 
@@ -27,13 +27,16 @@ body {
 
 .navbar-btn {
     background-color: white;
-    border: none;
+    border: 1px #1B64F2  solid;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
     color: #0F172A;
     font-size: 16px;
 }
 
 .add-record {
-    background-color: #6f2dbd;
+    background-color: #1B64F2;
     width: 99px;
     height: 32px;
     border-radius: 20px;

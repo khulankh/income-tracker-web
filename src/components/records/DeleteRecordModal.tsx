@@ -31,6 +31,7 @@ const DeleteModal: React.FC<Props> = ({ data, setData }) => {
         try {
             await axios.delete('https://income-tracker-service.onrender.com/deleteTransaction', { data: { id: data._id } });
             setData((prevData: RecordData[]) => prevData.filter(record => record._id !== data._id));
+            handleModal();
         } catch (error) {
             console.error('Error deleting record:', error);
         }
@@ -49,8 +50,8 @@ const DeleteModal: React.FC<Props> = ({ data, setData }) => {
                     <div className='delete-modal-container'>
                         <h3>Are You Sure?</h3>
                         <div style={{display:'flex', gap:'30px'}}>
-                        <button className='delete-btn' onClick={handleDeleteClick}><RiDeleteBin6Line size={32} /></button>
-                        <button className='cancel-btn' onClick={handleModal}><MdOutlineCancel size={32} /></button>
+                        <button className='delete-btn' onClick={handleDeleteClick}> Yes <RiDeleteBin6Line size={20} /></button>
+                        <button className='cancel-btn' onClick={handleModal}> No <MdOutlineCancel size={20} /></button>
                         </div>
                     </div>
                 </Box>
