@@ -23,6 +23,7 @@ body {
     color: #0F172A;
     font-size: 16px;
     font-weight: 800;
+    cursor: pointer;
 }
 
 .navbar-btn {
@@ -33,6 +34,7 @@ body {
     height: 30px;
     color: #0F172A;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .add-record {

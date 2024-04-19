@@ -16,6 +16,7 @@ body {
     border-radius: 20px;
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 .select-option {
